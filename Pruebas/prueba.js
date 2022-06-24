@@ -1,17 +1,4 @@
 
-// let saludo = "Hola";
-
-// let nombre = prompt ("ingrese su nombre");
-
-// let edad = prompt ("ingrese su edad");
-
-// console.log(saludo + " " + nombre + " " + "Es bueno saber que tienes" + " " + edad + "años") ;
-
-// for( edad; edad < 18; edad++){
-
-// console.log (edad)
-// }
-
 let nombre = prompt ("Ingrese su nombre");
 let anoNacimiento = prompt ("Ingrese su año de nacimiento");
 let anoActual = prompt ("En que año estamos?")
