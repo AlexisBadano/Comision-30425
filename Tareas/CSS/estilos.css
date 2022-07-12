@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.boton__magico:hover{
+    transform: scale(1.2) translateX(10%);
+    transition: all 1.5s ease-out;
+}

@@ -1,0 +1,196 @@
+.producto__destacado{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas: 
+        "subtitulo subtitulo"
+        "texto video"
+    ;
+
+    line-height: 2rem;
+    border: solid rgb(228, 119, 17);
+    background-color: #afafaf;
+    border-radius: 1rem;
+    margin: 3rem 5rem 0rem;
+
+    &--subtitulo{
+        grid-area: subtitulo;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        font-weight: 700;
+    }
+    
+    &--descripcion{
+        text-align: justify;
+        grid-area: texto;
+        padding: 1rem 3rem;
+        font-weight: 400;
+    }
+    
+    &--video{
+        padding: 1rem 3rem;
+        grid-area: video;
+
+        iframe{
+            height: 100%;
+            width: 100%;
+        
+        }
+    }
+
+}
+
+.banner{
+    margin-top: 0.5rem;
+    height: 150px;
+    background-image: url(../images/productos-destacados-banner.jpg);
+}
+
+.titulo{
+ @extend .template_titulos;
+}
+
+// Caja de Marcas 
+
+.brands{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    margin-bottom: 0;
+
+    ul{
+        background-color: #383d3f;
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+
+        padding: 0;
+    
+    }
+
+    &__svg{
+        padding: 1.5rem 4rem;
+        display: inline;
+        border: solid 1px orange;
+
+        path{
+            fill: #6a6a6a;
+        }
+    }
+
+    &__svg:hover {
+
+        .brands__svg--ryzen{
+
+            path{
+               fill: black;
+               transition: all 0.5s ease-out;
+            }
+        }
+        
+        .brands__svg--asus{
+
+            path{
+                fill: #00539b;
+                transition: all 0.5s ease-out;
+            }
+        }
+
+        .brands__svg--intel{
+
+            path{
+                fill: #0068b5 ;
+                transition: all 0.5s ease-out;
+
+            }
+        }
+
+        .brands__svg--nvidia{
+            .text{
+                fill:black;
+                transition: all 0.5s ease-out;
+            }
+
+            .icon{
+                fill:#76b900;
+                transition: all 0.5s ease-out;
+            }
+        }
+
+        .brands__svg--asrock{
+            path{
+                fill: #79bd28;
+                transition: all 0.5s ease-out;
+            }
+        }
+
+        .brands__svg--bequiet{
+            .be{
+                fill: black;
+                transition: all 0.5s ease-out;
+            }
+
+            .quiet{
+                fill: #ee7f00;
+                transition: all 0.5s ease-out;
+            }
+        }
+    }
+}
+
+
+svg:hover{
+    transform: scale(1.15);
+
+    transition: all 0.5s ease-out;
+}
+
+// Responsive for Tablet
+
+
+@media screen and (max-width:1189px){
+    .producto__destacado{
+        max-height: 1000px;
+        margin: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr 1fr;
+        grid-template-areas: "subtitulo" "texto" "video" ;
+
+
+        &--descripcion{
+            padding: 1rem 2rem;
+        }
+
+
+        &--video{
+            padding: 0.5rem;
+        }
+    }
+
+    .brands{
+        display: none;
+    }
+}
+
+// Responsive for Mobile
+
+@media screen and (max-width:450px){
+
+    .producto__destacado{
+        height: 70vh;
+
+        &--descripcion{
+            padding: 1rem;
+            line-height: 1.7rem;
+            overflow: scroll;
+        }
+    }
+
+
+    .producto__destacado--subtitulo{
+        display: flex;
+        justify-content: center;
+        padding-left: 0rem;
+    }
+}

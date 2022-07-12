@@ -1,0 +1,172 @@
+
+header{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.icono__bars{
+    display: none;
+}
+
+.logo img{
+    border-radius: 3rem;
+}
+
+.slogan{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 25%;
+ 
+    &__text {
+        font-size: 18px;
+        font-weight: bold;
+        font-style: italic;
+    }
+}
+
+.navegacion{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+
+    z-index: 10000;
+
+    /* Bootstrap agrega un margin-bottom 1rem a todas las p, dl, ul y ol en un archivo que se llama reboot.scss */
+    &__lista{
+    margin-bottom: 0rem;
+    }
+
+    &__boton{
+        display: inline;
+        padding: 0.4rem 0.8rem;
+    }
+
+    &__boton a {
+        color: rgb(228, 119, 17);
+        text-decoration: none;
+    }
+
+
+    &__boton--atras{
+        display: none;
+        font-size: 2rem;
+        font-weight: bold;
+        color: rgb(228, 119, 17);
+        text-decoration: none;
+    }
+}
+
+.navegacion__boton a:hover{
+    transition: all 0.3s ease-in;
+    font-weight: 700;
+}
+
+.navegacion__boton:hover{
+    border-radius: 50px;
+    background-color: rgb(224, 221, 221);
+    transition: background-color 0.3s ease-in;
+}
+
+.busqueda{
+    margin-right: 2rem;
+    
+}
+
+.menu__bars{
+    display: none;
+    
+}
+
+.navegacion__boton--atras a{
+    display: block;
+}
+
+// Responsibe for Tablet
+
+@media screen and (max-width:1024px){
+    
+    
+
+    .navegacion{
+            width: 100%;
+            justify-content: space-around;
+       
+
+        &__lista{
+            width: 100%;
+            padding: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__boton{
+            padding: 0rem;
+            margin-right: auto;
+        }
+    }
+
+    .busqueda{
+        display: none;
+    }
+
+}
+    // Responsive for Mobile
+
+@media screen and (max-width:450px){
+    
+    .slogan{
+        align-items: center;
+        width: 65%;
+    }
+
+    .menu__bars{
+        width: 20%;
+        text-decoration: none;
+        color: orange;
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+
+    .icono__bars{
+        display: block;
+    }
+
+    #sidebar{
+        background-color: rgb(224, 221, 221);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 60%;
+        max-width: 300px;
+
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+        
+    }
+
+    #sidebar .navegacion__lista{
+        height: 50% ;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        
+    }
+
+    #sidebar:target{
+        transform: translateX(0);
+
+    }
+
+    .navegacion__boton--atras{
+        display: block;
+    }
+}

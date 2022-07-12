@@ -1,0 +1,68 @@
+footer{
+    min-height: 250px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    background-color: black;
+
+    .map{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        ul{
+            list-style: none;
+        }
+        
+        a{
+            text-decoration: none;
+            color: $color-primary;
+        }
+
+        &__redes{
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .servicios{
+        display: flex;
+        align-items: center;
+
+        ul{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: $color-primary;
+        }
+    }
+}
+
+.copyright{
+    display: flex;
+    justify-content: center;
+
+    &__texto{
+        margin: 0;
+
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .map{
+        flex-wrap: wrap;
+
+        ul{
+            display: flex;
+
+            li{
+                padding: 0rem 1rem
+            }
+        }
+    }
+
+
+}

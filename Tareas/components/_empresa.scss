@@ -1,0 +1,57 @@
+
+.carousel__div{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel{
+    width: 40%;
+}
+
+.empresa{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 2rem;
+
+    &__texto{
+        font-weight: 1500;
+    }
+}
+
+// Responsive Tablet Start
+
+@media screen and (max-width:1024px){
+
+    .descripcionEmpresa{
+        display: flex;
+
+    }
+
+    .carousel{
+        width: 75%;
+
+        img{
+            width: 100vw;
+        }
+    }
+
+}
+ /* Responsive Tablet End */
+
+
+ /* Responsive for Mobile */
+
+@media screen and (max-width:450px){
+
+    
+
+    .carousel{
+        width: 90%;
+
+        img{
+            width: 100vw;
+        }
+    }
+}
+    /* Responsive Mobile End */

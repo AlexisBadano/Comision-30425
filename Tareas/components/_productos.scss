@@ -1,0 +1,37 @@
+.tabla__productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+
+    img{
+        padding: 0.25em;
+        height: 200px;
+        object-fit: contain;
+    }
+}
+
+
+// .caja__producto:hover{
+//     box-shadow: 0px 5px 0px rgba(#f6981c, 0.4);
+// }
+
+.lista__productos{
+    
+    li{
+        font-size: 1.25em;
+        display: flex;
+        justify-content: justify;
+    }
+}
+
+
+.articulos{
+    background: rgb(91,91,91);
+    background: linear-gradient(28deg, rgba(91,91,91,1) 8%, rgba(175,173,173,1) 19%, rgba(141,141,141,1) 33%, rgba(222,222,222,1) 50%, rgba(213,208,208,1) 64%, rgba(253,247,247,1) 79%, rgba(114,114,114,1) 100%);
+}
+
+// .tablaProductos td{
+//     text-align: justify;
+//     padding: 1rem 2rem;
+// }
