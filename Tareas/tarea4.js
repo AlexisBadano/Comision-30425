@@ -7,8 +7,6 @@ let productos = [];
 
 let productosEnCarrito = [];
 
-let arrayTotal = [];
-
 class Producto {
     constructor(nombre, marca, precio){
         this.nombre = nombre;
@@ -27,40 +25,64 @@ let producto6 = new Producto ("Intel", "Core i3 10100F 4.3Ghz", 16500)
 
 productos.push(producto1, producto2, producto3, producto4, producto5, producto6);
 
+// Funciones Generales
+
 function inicializarElementos() {
     botonMiCarrito = document.getElementById('botonCarrito');
     botonCierrePopUp = document.getElementById('botonCerrado');
     miCarrito = document.getElementById('popUp');
     botonCompra = document.getElementById('botonCompra');
 } 
-
 inicializarElementos();
 
+
 function totalSuma (productosEnCarrito) {
+
     let resultado = productosEnCarrito.reduce ((acc, item) => item.precio + acc, 0);
 
-    arrayTotal.push(resultado)
+    let total = document.querySelector('#popUp__total')
+    let suma = document.getElementById("popUp__total-number")
 
-    // let total = document.querySelector('#popUp__total')
-    // let suma = document.createElement("p")
+    suma.innerHTML = `$${resultado}`
 
-    // suma.innerHTML = `${resultado}`
-
-    // total.append(suma)
-
-    console.log(arrayTotal);
+    total.append(suma)
 }
 
 
+function sacarCarrito(productoSacar){
+    let sacar = productosEnCarrito.indexOf(productoSacar)
 
-function ProductosCarrito(producto){
-    producto = productosEnCarrito[productosEnCarrito.length - 1]
+    productosEnCarrito.splice(sacar, 1)
+}
+
+
+function ProductosCarrito(producto){ 
+
     let cuerpoLista = document.querySelector('#bodyList')
     let listaProd = document.createElement("li")
+    let removeButton = document.createElement("button")
 
-    listaProd.innerHTML = `${producto.nombre} ${producto.marca} $${producto.precio}`
+    removeButton.setAttribute('id','botonRemove')
+    listaProd.setAttribute('id','listaProducto')
 
-    cuerpoLista.appendChild(listaProd)
+    listaProd.innerHTML= `${producto.nombre} ${producto.marca} $${producto.precio}`
+    removeButton.innerHTML = "Remove"
+
+    cuerpoLista.append(listaProd)
+    listaProd.append(removeButton)
+
+    removeButton.addEventListener('click', function(event){
+        let x = event.target
+
+        console.log();
+        sacarCarrito(producto)
+        totalSuma(productosEnCarrito)
+        // productosEnCarrito.splice(3, 1)
+        x.parentElement.remove();
+
+        }
+    ) 
+    
 }
 
 
@@ -79,56 +101,64 @@ function abrirPopUp () {
 }
 
 
+
+
 // Botones de Compra
 
 
 botonCompra1.onclick = () => {
     productosEnCarrito.push(producto1)
-    ProductosCarrito();
+    ProductosCarrito(producto1);
+    console.log(productosEnCarrito);
+
+    abrirPopUp ()
+    totalSuma(productosEnCarrito)
+
+}
+
+botonCompra2.onclick = () => {
+    productosEnCarrito.push(producto2)
+    ProductosCarrito(producto2);
     console.log(productosEnCarrito);
 
     abrirPopUp ()
     totalSuma(productosEnCarrito)
 }
 
-botonCompra2.onclick = () => {
-    productosEnCarrito.push(producto2)
-    ProductosCarrito();
-    console.log(productosEnCarrito);
-
-    abrirPopUp ()
-}
-
 botonCompra3.onclick = () => {
     productosEnCarrito.push(producto3)
-    ProductosCarrito();
+    ProductosCarrito(producto3);
     console.log(productosEnCarrito);
     
     abrirPopUp ()
+    totalSuma(productosEnCarrito)
 }
 
 botonCompra4.onclick = () => {
     productosEnCarrito.push(producto4)
-    ProductosCarrito();
+    ProductosCarrito(producto4);
     console.log(productosEnCarrito);
     
     abrirPopUp ()
+    totalSuma(productosEnCarrito)
 }
 
 botonCompra5.onclick = () => {
     productosEnCarrito.push(producto5)
-    ProductosCarrito();
+    ProductosCarrito(producto5);
     console.log(productosEnCarrito);
     
     abrirPopUp ()
+    totalSuma(productosEnCarrito)
 }
 
 botonCompra6.onclick = () => {
     productosEnCarrito.push(producto6)
-    ProductosCarrito();
+    ProductosCarrito(producto6);
     console.log(productosEnCarrito);
 
     abrirPopUp ()
+    totalSuma(productosEnCarrito)
 }
 
 

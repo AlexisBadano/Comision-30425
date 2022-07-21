@@ -49,10 +49,22 @@
 
 .popUp__body-list{
     padding: 0rem;
-    padding-left: 4rem ;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .popUp__body-list li{
     list-style: none;
     padding: 5px;
+}
+
+.popUp__total{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popUp__total-number{
+    font-weight: bold;
 }
