@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Los mejores productos de las mejores marcas, de la mano de la mejor garantia del mercado. Encontra motherboards, procesadores, monitores, memorias RAM, monitores, Pc's armadas y mucho más!">
+    <meta name="description" content="Contactenos para solicitar un presupuesto a medida sobre el armado de su PC o Servidor">
 
     <!-- Font-Family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,20 +14,20 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- Hoja de Estilos Propios -->
+    <!-- Hoja de Estilos Propios Sass -->
+
     <link rel="stylesheet" href="../CSS/style.css">
 
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/d01018b788.js" crossorigin="anonymous"></script>
 
-    <script defer src="./tarea4.js"></script>
-
-    <title>Ryzer Gaming - productos</title>
+    <title>Ryzer Gaming - Contactanos</title>
 </head>
-<body>
+
+<body class="body_contacto">
     <header>
         <a class="logo" href="../index.html"><img src="../images/logo.jpg" alt="logo ryzer" width="75" height="75"></a>
-    
+
         <span class="slogan">
             <p class="slogan__text"> Gaming taken to the next level </p>
         </span>
@@ -49,169 +49,74 @@
         
             <div class="busqueda">
                 <input class="" type="search" name="" id="" placeholder="Search">
-                <button id="botonCarrito">Mi Carrito</button>
-    
-                <div class="popUp" id="popUp" >
-                    <div class="popUp__header" id="header">
-                        <div class="popUp__header-title">En carrito:</div>
-                        <button class="boton__cerrar" id="botonCerrado">&times;</button>
-            
-                    </div>
-                    
-                    <div class="popUp__body" id="popUpBody">
-                        <ul class="popUp__body-list" id="bodyList">
-                            
-                        </ul>
-                    </div>
-
-                    <div class="popUp__total" id="popUp__total">
-                        <p>Total:</p>
-                        <p class="popUp__total-number" id="popUp__total-number">0</p>
-                        
-                    </div>
-            
-                </div>
-
-
-
-
             </div>
         
         </nav>
         
-      </header>   
+    </header>    
+
 
     <main>
         <div class="banner">
-            <h1 class="titulo">Productos</h1> 
+            <h1 class="titulo">Contáctanos</h1>
         </div>
+        
 
-        <section>
-            <div class="articulos">
-                <div class="row">
-                    <div class="mt-5 col-md-3 border-end border-dark border-3 lista__productos">
-                        <ul>
-                            <li>Monitores</li>
-                            <li>Procesadores</li>
-                            <li>Memorias</li>
-                            <li>Almacenamiento</li>
-                            <li>Gabinetes</li>
-                            <li>PC Armadas</li>
-                        </ul>
+            <div class="contacto__cuerpo">
+                <form class="contacto__cuerpo--formulario" action="">
+                    <h2>Datos de contacto:</h2>
+
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input class="input" required type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+                    </div>
+                    
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input class="input" required type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido">
                     </div>
 
-                    <div class="mt-3 col-md-9 tabla__productos">
-
-                        <div class="m-3 card text-center border-4 border-warning col-md-3 caja__producto">
-
-                            <img src="../images/productos/i3.jpg" alt="inteli3">
+                    <div>
+                        <label for="sexo">Sexo</label>
+                        <select name="sexo" id="sexo">Sexo:
+                            <option value="sexo">Elija una opcion</option>
+                            <option value="sexo">Femenino</option>
+                            <option value="sexo">Masculino</option>
+                            <option value="sexo">Prefiero no contestar</option>
+                        </select>
+                    </div>
                     
-                            <div class="card-body">
-        
-                                <h5>Intel Core i3 10100f 4.3Ghz</h5>
-                                
-                                <h3 class="card-text">$16.500</h3>
-                                <p class="card-text">12 Cuotas sin Interés</p>
-                                
-                                <button type="button" id="botonCompra1" class="btn btn-primary">Comprar</button>
-
-                            </div>
-        
-                        </div>
-
-                        <div class="m-3 card text-center border-4 border-warning col-md-3">
-                            
-                            <img src="../images/productos/i5.jpg" alt="inteli5">
-
-                            <div class="card-body">
-        
-                                <h5>Intel Core i5 10600kf 4.1Ghz</h5>
-                                
-                                <h3 class="card-text">$33.800</h3>
-                                <p class="card-text">12 Cuotas sin Interés</p>
-                                
-                                <button type="button" id="botonCompra2" class="btn btn-primary">Comprar</button>
-
-                            </div>
-        
-                        </div>
-
-                        <div class="m-3 card text-center border-4 border-warning col-md-3">
-
-                            <img src="../images/productos/Ryzen 7.jpg" alt="ryzen7">
-                    
-                            <div class="card-body">
-        
-                                <h5>AMD Ryzen 7 5700x 4.6 Ghz</h5>
-                                
-                                <h3 class="card-text">$57.000</h3>
-                                <p class="card-text">12 Cuotas sin Interés</p>
-                                
-                                <button type="button" id="botonCompra3" class="btn btn-primary">Comprar</button>
-
-                            </div>
-        
-                        </div>
-
-                        <div class="m-3 card text-center border-4 border-warning col-md-3">
-
-                            <img src="../images/productos/Ryzen 3.jpg" alt="ryzen3">
-                    
-                            <div class="card-body">
-        
-                                <h5>AMD Ryzen 3 3200g 3.6 Ghz</h5>
-                                
-                                <h3 class="card-text">$35.500</h3>
-                                <p class="card-text">12 Cuotas sin Interés</p>
-                                
-                                <button type="button" id="botonCompra4" class="btn btn-primary">Comprar</button>
-
-                            </div>
-        
-                        </div>
-
-                        <div class="m-3 card text-center border-4 border-warning col-md-3">
-
-                            <img src="../images/productos/Ryzen 7.jpg" alt="ryzen7">
-                    
-                            <div class="card-body">
-        
-                                <h5>AMD Ryzen 7 5700x 4.6 Ghz</h5>
-                                
-                                <h3 class="card-text">$57.000</h3>
-                                <p class="card-text">12 Cuotas sin Interés</p>
-                                
-                                <button type="button" id="botonCompra5" class="btn btn-primary">Comprar</button>
-
-                            </div>
-        
-                        </div>
-                        
-                        <div class="m-3 card text-center border-4 border-warning col-md-3">
-
-                            <img src="../images/productos/i3.jpg" alt="inteli3">
-                    
-                            <div class="card-body">
-        
-                                <h5>Intel Core i3 10100f 4.3Ghz</h5>
-                                
-                                <h3 class="card-text">$12.500</h3>
-                                <p class="card-text">12 Cuotas sin Interés</p>
-                                
-                                <button type="button" id="botonCompra6" class="btn btn-primary">Comprar</button>
-
-                            </div>
-        
-                        </div>
-
+                    <div>
+                        <label for="email">Correo electronico</label>
+                        <input class="input" required type="text"  id="email" name="email" placeholder="Ingrese su e-mail">
                     </div>
 
+                    <div>
+                        <label for="telefono">Telefono</label>
+                        <input class="input" required type="number" id="telefono" name="email" placeholder="Ingrese su telefono">
+                    </div>
 
+                    <div>
+                        <label for="consulta">Consulta</label>
+                        <textarea required name="consulta" id="consulta" cols="45" rows="10" placeholder="Escriba su consulta aqui"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="newsletter">Deseo recibir las ofertas</label>
+                        <input class type="checkbox" name="neswletter" id="newsletter">
+                    </div>
+
+                    <div>
+                        <button>Enviar</button>
+                    </div>
+                </form>
+            
+
+                <div class="mapa">
+                    <h2 class="donde__estamos">Donde estamos:</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.294810127749!2d-58.43919049236716!3d-34.59339629538653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58ab2bf63e9%3A0xb9de16f6f5e1964f!2sThames%20761%2C%20C1414DCO%20CABA!5e0!3m2!1ses-419!2sar!4v1648247481662!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> <frameborder="0">
                 </div>
-
-            </div>
-        </section>
-                
+            </div>    
     </main>
 
     <footer>

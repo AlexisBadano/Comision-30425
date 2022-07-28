@@ -5,7 +5,19 @@ let botonCompra;
 
 let productos = [];
 
-let productosEnCarrito = [];
+let productosEnCarrito;
+
+let aux = localStorage.getItem("productosEnCarrito"); 
+
+if (!aux) {
+    productosEnCarrito = [];
+  } else {
+    productosEnCarrito = JSON.parse(aux);
+    productosEnCarrito.forEach(element => {ProductosCarrito(element)
+        totalSuma(productosEnCarrito)    
+    });
+  }
+  
 
 class Producto {
     constructor(nombre, marca, precio){
@@ -53,6 +65,7 @@ function sacarCarrito(productoSacar){
     let sacar = productosEnCarrito.indexOf(productoSacar)
 
     productosEnCarrito.splice(sacar, 1)
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
 }
 
 
@@ -102,12 +115,12 @@ function abrirPopUp () {
 
 
 
-
 // Botones de Compra
 
 
 botonCompra1.onclick = () => {
     productosEnCarrito.push(producto1)
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
     ProductosCarrito(producto1);
     console.log(productosEnCarrito);
 
@@ -118,6 +131,7 @@ botonCompra1.onclick = () => {
 
 botonCompra2.onclick = () => {
     productosEnCarrito.push(producto2)
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
     ProductosCarrito(producto2);
     console.log(productosEnCarrito);
 
@@ -127,6 +141,7 @@ botonCompra2.onclick = () => {
 
 botonCompra3.onclick = () => {
     productosEnCarrito.push(producto3)
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
     ProductosCarrito(producto3);
     console.log(productosEnCarrito);
     
@@ -136,6 +151,7 @@ botonCompra3.onclick = () => {
 
 botonCompra4.onclick = () => {
     productosEnCarrito.push(producto4)
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
     ProductosCarrito(producto4);
     console.log(productosEnCarrito);
     
@@ -145,6 +161,7 @@ botonCompra4.onclick = () => {
 
 botonCompra5.onclick = () => {
     productosEnCarrito.push(producto5)
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
     ProductosCarrito(producto5);
     console.log(productosEnCarrito);
     
@@ -154,6 +171,7 @@ botonCompra5.onclick = () => {
 
 botonCompra6.onclick = () => {
     productosEnCarrito.push(producto6)
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
     ProductosCarrito(producto6);
     console.log(productosEnCarrito);
 
