@@ -43,10 +43,20 @@ function inicializarElementos() {
     botonMiCarrito = document.getElementById('botonCarrito');
     botonCierrePopUp = document.getElementById('botonCerrado');
     miCarrito = document.getElementById('popUp');
-    botonCompra = document.getElementById('botonCompra');
+    botonCompra = document.getElementsByClassName('btn-primary');
 } 
 inicializarElementos();
 
+botonCompra.onclick = () => {
+    agregarProductosCarrito();
+}
+
+function agregarProductosCarrito (event){
+    let boton = event.target
+    let item = boton.parentElement.parentElement
+    console.log(item)
+
+}
 
 function totalSuma (productosEnCarrito) {
 
@@ -90,7 +100,6 @@ function ProductosCarrito(producto){
         console.log();
         sacarCarrito(producto)
         totalSuma(productosEnCarrito)
-        // productosEnCarrito.splice(3, 1)
         x.parentElement.remove();
 
         }
