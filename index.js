@@ -104,11 +104,22 @@ function ProductosCarrito(producto) {
 
   removeButton.addEventListener("click", function (event) {
     let x = event.target;
-
-    console.log();
-    sacarCarrito(producto);
-    totalSuma(productosEnCarrito);
-    x.parentElement.remove();
+    Swal.fire({
+      title: "¿Esta seguro que quiere eliminar el item?",
+      text: "No podrás dar marcha atras!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, borralo!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Borrado!", "El item fue removido!.", "success");
+        sacarCarrito(producto);
+        totalSuma(productosEnCarrito);
+        x.parentElement.remove();
+      }
+    });
   });
 }
 
