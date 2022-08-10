@@ -1,7 +1,6 @@
 let botonMiCarrito;
 let botonCierrePopUp;
 let miCarrito;
-let botonCompra;
 
 let productos = [];
 
@@ -13,8 +12,8 @@ let aux = localStorage.getItem("productosEnCarrito");
 //     productosEnCarrito = [];
 //   } else {
 //     productosEnCarrito = JSON.parse(aux);
-//     productosEnCarrito.forEach(element => {ProductosCarrito(element)
-//         totalSuma(productosEnCarrito)
+//     productosEnCarrito.forEach(element => {ProductosCarrito(element);
+//         totalSuma(productosEnCarrito);
 //     });
 //   }
 
@@ -60,7 +59,6 @@ function inicializarElementos() {
   botonMiCarrito = document.getElementById("botonCarrito");
   botonCierrePopUp = document.getElementById("botonCerrado");
   miCarrito = document.getElementById("popUp");
-  botonCompra = document.getElementsByClassName("btn-primary");
 }
 inicializarElementos();
 
@@ -123,98 +121,51 @@ function ProductosCarrito(producto) {
   });
 }
 
-function mostrarDatos(i) {
-  let nombre = productos[i].nombre;
-  let marca = productos[i].marca;
-  let precio = productos[i].precio;
-
-  console.log(nombre, marca, precio);
-}
-
 function abrirPopUp() {
   const popUp = document.getElementById("popUp");
   popUp.classList.add("active");
 }
 
-// Botones de Compra
+// Productos en el HTML
 
-botonCompra1.onclick = () => {
-  productosEnCarrito.push(producto1);
+function pintarCards() {
+  let producto = "";
+  for (let i = 0; i < productos.length; i++) {
+    producto =
+      producto +
+      `<div class="m-3 card text-center border-4 border-warning col-md-3 caja__producto">
+  <img src="../images/productos/i3.jpg" alt="inteli3"/>
+
+  <div class="card-body">
+    <h5>${productos[i].nombre} ${productos[i].marca}</h5>
+
+    <h3 class="card-text">$${productos[i].precio}</h3>
+    <p class="card-text">12 Cuotas sin Interés</p>
+
+    <button onclick="agregarCarrito(${i})" type="button" class="btn btn-primary">
+      Comprar
+    </button>
+  </div>
+</div>`;
+  }
+  document.getElementById("cards").innerHTML = producto;
+}
+pintarCards();
+
+function agregarCarrito(i) {
+  //Recibe como parametro, el indice que obtiene el boton "onclick" de cada tarjeta
+
+  console.log(productosEnCarrito);
+  productosEnCarrito.push(productos[i]);
   localStorage.setItem(
     "productosEnCarrito",
     JSON.stringify(productosEnCarrito)
   );
-  ProductosCarrito(producto1);
-  console.log(productosEnCarrito);
+  ProductosCarrito(productos[i]);
 
   abrirPopUp();
   totalSuma(productosEnCarrito);
-};
-
-botonCompra2.onclick = () => {
-  productosEnCarrito.push(producto2);
-  localStorage.setItem(
-    "productosEnCarrito",
-    JSON.stringify(productosEnCarrito)
-  );
-  ProductosCarrito(producto2);
-  console.log(productosEnCarrito);
-
-  abrirPopUp();
-  totalSuma(productosEnCarrito);
-};
-
-botonCompra3.onclick = () => {
-  productosEnCarrito.push(producto3);
-  localStorage.setItem(
-    "productosEnCarrito",
-    JSON.stringify(productosEnCarrito)
-  );
-  ProductosCarrito(producto3);
-  console.log(productosEnCarrito);
-
-  abrirPopUp();
-  totalSuma(productosEnCarrito);
-};
-
-botonCompra4.onclick = () => {
-  productosEnCarrito.push(producto4);
-  localStorage.setItem(
-    "productosEnCarrito",
-    JSON.stringify(productosEnCarrito)
-  );
-  ProductosCarrito(producto4);
-  console.log(productosEnCarrito);
-
-  abrirPopUp();
-  totalSuma(productosEnCarrito);
-};
-
-botonCompra5.onclick = () => {
-  productosEnCarrito.push(producto5);
-  localStorage.setItem(
-    "productosEnCarrito",
-    JSON.stringify(productosEnCarrito)
-  );
-  ProductosCarrito(producto5);
-  console.log(productosEnCarrito);
-
-  abrirPopUp();
-  totalSuma(productosEnCarrito);
-};
-
-botonCompra6.onclick = () => {
-  productosEnCarrito.push(producto6);
-  localStorage.setItem(
-    "productosEnCarrito",
-    JSON.stringify(productosEnCarrito)
-  );
-  ProductosCarrito(producto6);
-  console.log(productosEnCarrito);
-
-  abrirPopUp();
-  totalSuma(productosEnCarrito);
-};
+}
 
 // PopUp Carrito
 
