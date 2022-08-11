@@ -1,0 +1,7 @@
+[
+    {"marca": "Intel", "nombre":"Core i3 10100F 4.3Ghz" ,  "precio":16500,"id":1, "categoria": "procesadores" },
+    {"marca": "AMD","nombre":"Ryzen 7 5700X 4.6Ghz" ,  "precio":57000,"id":2,"categoria": "procesadores" },
+    {"marca": "AMD","nombre":"Ryzen 3 3200G 3.6Ghz" ,  "precio":35500,"id":3, "categoria": "procesadores" },
+    {"marca": "Intel","nombre":"Core i5 10600KF 4.1Ghz" ,  "precio":33800,"id":4, "categoria": "procesadores" },
+    {"marca": "Intel","nombre":"Core i5 10600KF 4.1Ghz" ,  "precio":33800,"id":4, "categoria": "procesadores" }
+]

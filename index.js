@@ -8,14 +8,14 @@ let productosEnCarrito;
 
 let aux = localStorage.getItem("productosEnCarrito");
 
-// if (!aux) {
-//     productosEnCarrito = [];
-//   } else {
-//     productosEnCarrito = JSON.parse(aux);
-//     productosEnCarrito.forEach(element => {ProductosCarrito(element);
-//         totalSuma(productosEnCarrito);
-//     });
-//   }
+  // if (!aux) {
+  //     productosEnCarrito = [];
+  //   } else {
+  //     productosEnCarrito = JSON.parse(aux);
+  //     productosEnCarrito.forEach(element => {ProductosCarrito(element);
+  //         totalSuma(productosEnCarrito);
+  //     });
+  //   }
 
 // Operador ternario para entrega de "optimización"
 
@@ -28,30 +28,44 @@ function casoPositivo() {
     totalSuma(productosEnCarrito);
   });
 }
+fetch('/data.json')
+.then((resinicial) => resinicial.json())
+.then((res) => {
+  const arrayProd = res;
 
-class Producto {
-  constructor(nombre, marca, precio) {
-    this.nombre = nombre;
-    this.marca = marca;
-    this.precio = precio;
+
+  for (let index = 0; index < arrayProd.length; index++) {
+    const element = arrayProd[index];
+    
+    productos.push(element)
+    
+    pintarCards();
   }
 }
+)
+// class Producto {
+//   constructor(nombre, marca, precio) {
+//     this.nombre = nombre;
+//     this.marca = marca;
+//     this.precio = precio;
+//   }
+// }
 
-let producto1 = new Producto("Intel", "Core i3 10100F 4.3Ghz", 16500);
-let producto2 = new Producto("Intel", "Core i5 10600KF 4.1Ghz", 33800);
-let producto3 = new Producto("AMD", "Ryzen 7 5700X 4.6Ghz", 57000);
-let producto4 = new Producto("AMD", "Ryzen 3 3200G 3.6Ghz", 35500);
-let producto5 = new Producto("AMD", "Ryzen 7 5700X 4.6Ghz", 57000);
-let producto6 = new Producto("Intel", "Core i3 10100F 4.3Ghz", 16500);
+// let producto1 = new Producto("Intel", "Core i3 10100F 4.3Ghz", 16500);
+// let producto2 = new Producto("Intel", "Core i5 10600KF 4.1Ghz", 33800);
+// let producto3 = new Producto("AMD", "Ryzen 7 5700X 4.6Ghz", 57000);
+// let producto4 = new Producto("AMD", "Ryzen 3 3200G 3.6Ghz", 35500);
+// let producto5 = new Producto("AMD", "Ryzen 7 5700X 4.6Ghz", 57000);
+// let producto6 = new Producto("Intel", "Core i3 10100F 4.3Ghz", 16500);
 
-productos.push(
-  producto1,
-  producto2,
-  producto3,
-  producto4,
-  producto5,
-  producto6
-);
+// productos.push(
+//   producto1,
+//   producto2,
+//   producto3,
+//   producto4,
+//   producto5,
+//   producto6
+// );
 
 // Funciones Generales
 
