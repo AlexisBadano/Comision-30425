@@ -2,6 +2,10 @@
 
 /* Luego lo minifico pasandolo a sass! */
 
+a {
+    text-decoration: none;
+}
+
 .popUp{
     position: fixed;
     background-color: white;

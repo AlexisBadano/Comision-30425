@@ -1,7 +1,16 @@
 [
-    {"marca": "Intel", "nombre":"Core i3 10100F 4.3Ghz" ,  "precio":16500,"id":1, "categoria": "procesadores" },
-    {"marca": "AMD","nombre":"Ryzen 7 5700X 4.6Ghz" ,  "precio":57000,"id":2,"categoria": "procesadores" },
-    {"marca": "AMD","nombre":"Ryzen 3 3200G 3.6Ghz" ,  "precio":35500,"id":3, "categoria": "procesadores" },
-    {"marca": "Intel","nombre":"Core i5 10600KF 4.1Ghz" ,  "precio":33800,"id":4, "categoria": "procesadores" },
-    {"marca": "Intel","nombre":"Core i5 10600KF 4.1Ghz" ,  "precio":33800,"id":4, "categoria": "procesadores" }
+    {"marca": "Intel", "nombre":"Core i3 10100F 4.3Ghz" ,  "precio":16500,"id":1, "categoria": "procesadores", "imagen": "src='../images/productos/i3.jpg'"},
+    {"marca": "AMD","nombre":"Ryzen 7 5700X 4.6Ghz" ,  "precio":57000,"id":2,"categoria": "procesadores","imagen": "src='../images/productos/ryzen7.jpg'" },
+    {"marca": "AMD","nombre":"Ryzen 3 3200G 3.6Ghz" ,  "precio":35500,"id":3, "categoria": "procesadores","imagen": "src='../images/productos/ryzen3.jpg'" },
+    {"marca": "Intel","nombre":"Core i5 10600KF 4.1Ghz" ,  "precio":33800,"id":4, "categoria": "procesadores","imagen": "src='../images/productos/i5.jpg'" },
+    {"marca": "Intel","nombre":"Core i5 10600KF 4.1Ghz" ,  "precio":33800,"id":5, "categoria": "procesadores","imagen": "src='../images/productos/i5.jpg'" },
+    {"marca": "Gigabyte","nombre":"Monitor LED 27' Gigabyte G27F-SA 144Hz" ,  "precio":80500,"id":6, "categoria": "monitores","imagen": "src='../images/productos/G27.webp'" },
+    {"marca": "Samsung","nombre":"Monitor LED CURVO 32' Samsung T550 75Hz" ,  "precio":88000,"id":7, "categoria": "monitores","imagen": "src='../images/productos/SamsungT550.jpg'" },
+    {"marca": "Samsung","nombre":"Monitor LED CURVO 24' Samsung Odyssey CRG5 G50 144Hz" ,  "precio":71890,"id":8, "categoria": "monitores","imagen": "src='../images/productos/Odyssey.webp'" },
+    {"marca": "PNY","nombre":"Memoria Ram PNY XLR8 Gaming EPIC-X Silver 8GB 3600Mhz RGB DDR4" ,  "precio":8200,"id":9, "categoria": "ram","imagen": "src='../images/productos/XLR8silver.webp'" },
+    {"marca": "PNY","nombre":"Memoria Ram PNY XLR8 GAMING 8GB 3200Mhz RGB DDR4" ,  "precio":7700,"id":10, "categoria": "ram","imagen": "src='../images/productos/XLR8.webp'" },
+    {"marca": "Logitech","nombre":"Mouse Logitech G203 Lightsync Black" ,  "precio":2950,"id":11, "categoria": "perifericos","imagen": "src='../images/productos/g203.webp'" },
+    {"marca": "Redragon","nombre":"Combo Mouse Y Pad Gamer Redragon M601WL-BA" ,  "precio":2150,"id":12, "categoria": "perifericos","imagen": "src='../images/productos/M601.webp'" },
+    {"marca": "Logitech","nombre":"Teclado Logitech K230 Inalambrico" ,  "precio":2480,"id":13, "categoria": "perifericos","imagen": "src='../images/productos/k230.webp'" },
+    {"marca": "QBOX","nombre":"Teclado QBOX K9260 RGB" ,  "precio":1389,"id":14, "categoria": "perifericos","imagen": "src='../images/productos/qbox.webp'" }
 ]

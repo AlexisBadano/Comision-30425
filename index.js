@@ -8,14 +8,6 @@ let productosEnCarrito;
 
 let aux = localStorage.getItem("productosEnCarrito");
 
-  // if (!aux) {
-  //     productosEnCarrito = [];
-  //   } else {
-  //     productosEnCarrito = JSON.parse(aux);
-  //     productosEnCarrito.forEach(element => {ProductosCarrito(element);
-  //         totalSuma(productosEnCarrito);
-  //     });
-  //   }
 
 // Operador ternario para entrega de "optimización"
 
@@ -28,44 +20,19 @@ function casoPositivo() {
     totalSuma(productosEnCarrito);
   });
 }
-fetch('/data.json')
-.then((resinicial) => resinicial.json())
-.then((res) => {
-  const arrayProd = res;
+fetch("/data.json")
+  .then((resinicial) => resinicial.json())
+  .then((res) => {
+    const arrayProd = res;
 
+    for (let index = 0; index < arrayProd.length; index++) {
+      const element = arrayProd[index];
 
-  for (let index = 0; index < arrayProd.length; index++) {
-    const element = arrayProd[index];
-    
-    productos.push(element)
-    
-    pintarCards();
-  }
-}
-)
-// class Producto {
-//   constructor(nombre, marca, precio) {
-//     this.nombre = nombre;
-//     this.marca = marca;
-//     this.precio = precio;
-//   }
-// }
+      productos.push(element);
 
-// let producto1 = new Producto("Intel", "Core i3 10100F 4.3Ghz", 16500);
-// let producto2 = new Producto("Intel", "Core i5 10600KF 4.1Ghz", 33800);
-// let producto3 = new Producto("AMD", "Ryzen 7 5700X 4.6Ghz", 57000);
-// let producto4 = new Producto("AMD", "Ryzen 3 3200G 3.6Ghz", 35500);
-// let producto5 = new Producto("AMD", "Ryzen 7 5700X 4.6Ghz", 57000);
-// let producto6 = new Producto("Intel", "Core i3 10100F 4.3Ghz", 16500);
-
-// productos.push(
-//   producto1,
-//   producto2,
-//   producto3,
-//   producto4,
-//   producto5,
-//   producto6
-// );
+      pintarCards();
+    }
+  });
 
 // Funciones Generales
 
@@ -108,7 +75,7 @@ function ProductosCarrito(producto) {
   removeButton.setAttribute("id", "botonRemove");
   listaProd.setAttribute("id", "listaProducto");
 
-  listaProd.innerHTML = `${producto.nombre} ${producto.marca} $${producto.precio}`;
+  listaProd.innerHTML = `<div>${producto.nombre} ${producto.marca} $${producto.precio}</div>`;
   removeButton.innerHTML = "Remove";
 
   cuerpoLista.append(listaProd);
@@ -148,19 +115,19 @@ function pintarCards() {
     producto =
       producto +
       `<div class="m-3 card text-center border-4 border-warning col-md-3 caja__producto">
-  <img src="../images/productos/i3.jpg" alt="inteli3"/>
+          <img ${productos[i].imagen}/>
 
-  <div class="card-body">
-    <h5>${productos[i].nombre} ${productos[i].marca}</h5>
+          <div class="card-body">
+            <h5>${productos[i].nombre} ${productos[i].marca}</h5>
 
-    <h3 class="card-text">$${productos[i].precio}</h3>
-    <p class="card-text">12 Cuotas sin Interés</p>
+            <h3 class="card-text">$${productos[i].precio}</h3>
+            <p class="card-text">12 Cuotas sin Interés</p>
 
-    <button onclick="agregarCarrito(${i})" type="button" class="btn btn-primary">
-      Comprar
-    </button>
-  </div>
-</div>`;
+            <button onclick="agregarCarrito(${i})" type="button" class="btn btn-primary">
+              Comprar
+            </button>
+          </div>
+        </div>`;
   }
   document.getElementById("cards").innerHTML = producto;
 }
@@ -169,7 +136,6 @@ pintarCards();
 function agregarCarrito(i) {
   //Recibe como parametro, el indice que obtiene el boton "onclick" de cada tarjeta
 
-  console.log(productosEnCarrito);
   productosEnCarrito.push(productos[i]);
   localStorage.setItem(
     "productosEnCarrito",
